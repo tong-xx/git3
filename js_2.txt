@@ -1,0 +1,26 @@
+Jquery的查找
+.children() 与.find() 的共同点和区别：
+1、	都能向下查找满足条件的对象
+2、	区别是，children只查一级节点(node),find可以追到叶节点（leaf node）
+对应于向下查找，我们使用.parent()和.parents()向上查找， 区别是parents可以查到根节点，parent只查一级节点。
+
+
+DOM模型复习：
+1、	window是浏览器对象模型的根
+2、	在全局定义的函数，变量都存在于window的属性内可以任意访问。
+3、	Function也是一个类型
+4、	Window中的属性访问时，可以省略window，例如自定义的函数abc()
+window.close() 是关闭由js打开的窗口，关闭前必须拿到window对象
+1、	自己关自己
+2、	上级窗口关闭自己
+DOM文档对象，有属性(Property),有方法(Method)，有集合(Collection)，有事件(Event)
+Dom取得的集合是HTMLCollection对象，可以直接用下标形式访问。
+例如:
+document.getElementsByTagName(‘div’) 返回一个div的element集合
+
+jQuery:
+通过选择器获得的jQuery对象集合，调用其索引下标进行读取的时候，返回的不是jQuery对象，而是Dom对象。
+
+dom对象到jquery对象-》 在外围包上一个jquery函数即可
+例如： var el = document.getElementById(‘panel’);
+var $EL = $(el) ;  //jquery对象就直接在dom对象上包装调用一下。
